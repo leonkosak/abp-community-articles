@@ -70,6 +70,10 @@ There are some general recommendations for writing efficient queries using EF Co
 
 When maximum performance is needed (complex queries, very frequent queries,...), using [Compiled queries](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities) and/or [SQL queries](https://learn.microsoft.com/en-us/ef/core/querying/sql-queries) can improve performance.
 
+Use ReadOnly Repositories and NoTracking (EF Core feature) for read DB requests (abp v8.0 onwards).
+
+For complex queries when LINQ is not suitable you can use [Dapper](https://docs.abp.io/en/abp/latest/Dapper) (but prefer EF Core SQL queries instead of Dapper, because of similar approaches - keep technology stack and libraries as small as possible).
+
 ## Application layer (backend)
 * [Microsoft ASP.NET Core Best Practices](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/best-practices) covers most topics regarding performance.
 Best Practices is part of [Microsoft ASP.NET Core Performance](https://learn.microsoft.com/en-us/aspnet/core/performance/overview) documentation.
@@ -79,6 +83,8 @@ Best Practices is part of [Microsoft ASP.NET Core Performance](https://learn.mic
 * Using [asynchronous code](https://medium.com/@frederikbanke/improving-scalability-in-c-using-async-and-await-f97af1466922) (**async/await**) wherever possibe and not mixing synchronous and asynchronous code
 
 * For computationally intensive tasks, which can leverage parallel code use [Task Parallel Library](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/task-parallel-library-tpl) (TPL) from Microsoft (available from .NET Framework 4.0 onwards).
+
+* [Reduce memory allocations](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/performance/) wherever possible.
 
 * Build deployment packages in **Release** mode (and with additional optimization possibilities (AoT,...)).
 
