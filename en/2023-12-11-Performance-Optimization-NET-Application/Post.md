@@ -46,6 +46,9 @@ Further reading:
 * [JSON in PostgreSQL](https://www.postgresql.org/docs/current/functions-json.html)
 * [JSON Mapping in Npgsql (EF Core)](https://www.npgsql.org/efcore/mapping/json.html)
 
+### Paging Approach
+If **Cursor Pagination** can be used, then it is the preferred way how to effectively sort and paginate data from database. [This article]()https://khalidabuhakmeh.com/cursor-paging-with-entity-framework-core-and-aspnet-core shows execution times and it's based on EF Core implementation.
+
 ### Database sharding
 The smaller the database, the less data is for querying and this also means lower execution times.
 * In multitenant applications, it is recommended to use per-tenant database or multiple databases per tenant (logging db, data db,...).
@@ -80,11 +83,14 @@ Best Practices is part of [Microsoft ASP.NET Core Performance](https://learn.mic
 
 * Usege of [Cached Service Providers](https://docs.abp.io/en/abp/latest/Dependency-Injection#cached-service-providers) (ICachedServiceProvider or ITransientCachedServiceProvider) to optimize dependency injection.
 
-* Using [asynchronous code](https://medium.com/@frederikbanke/improving-scalability-in-c-using-async-and-await-f97af1466922) (**async/await**) wherever possibe and not mixing synchronous and asynchronous code
+* Using [asynchronous code](https://medium.com/@frederikbanke/improving-scalability-in-c-using-async-and-await-f97af1466922) (**async/await**) wherever possible and not mixing synchronous and asynchronous code
 
 * For computationally intensive tasks, which can leverage parallel code use [Task Parallel Library](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/task-parallel-library-tpl) (TPL) from Microsoft (available from .NET Framework 4.0 onwards).
 
 * [Reduce memory allocations](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/performance/) wherever possible.
+
+* [Discover StringBuilder performance benefits](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)
+[This article](https://www.meziantou.net/stringbuilder-performance-pitfalls.htm) shows performance benefits using StringBuilder.
 
 * Build deployment packages in **Release** mode (and with additional optimization possibilities (AoT,...)).
 
