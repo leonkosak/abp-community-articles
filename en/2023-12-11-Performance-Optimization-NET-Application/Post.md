@@ -33,6 +33,9 @@ Leverage:
 * [Entity Cache](https://docs.abp.io/en/abp/latest/Entity-Cache)
 * [Redis Cache](https://docs.abp.io/en/abp/latest/Redis-Cache)
 
+### Paging Approach
+If **Cursor Pagination** can be used, then it is the preferred way how to effectively sort and paginate data from database. [This article](https://khalidabuhakmeh.com/cursor-paging-with-entity-framework-core-and-aspnet-core) shows execution times and it's based on EF Core implementation.
+
 ### Denormalization techniques and JSON (RDBMS)
 Using [denormalization](https://en.wikipedia.org/wiki/Denormalization) techniques can (significantly) reduce querying execution times.
 Querying such pieces of data from different parts of application should be read from the location where the query is the most efficient (performance-wise).
@@ -45,9 +48,6 @@ Further reading:
 * [JSON data in Microsoft SQL Server](https://learn.microsoft.com/en-us/sql/relational-databases/json/json-data-sql-server)
 * [JSON in PostgreSQL](https://www.postgresql.org/docs/current/functions-json.html)
 * [JSON Mapping in Npgsql (EF Core)](https://www.npgsql.org/efcore/mapping/json.html)
-
-### Paging Approach
-If **Cursor Pagination** can be used, then it is the preferred way how to effectively sort and paginate data from database. [This article](https://khalidabuhakmeh.com/cursor-paging-with-entity-framework-core-and-aspnet-core) shows execution times and it's based on EF Core implementation.
 
 ### Database sharding
 The smaller the database, the less data is for querying and this also means lower execution times.
@@ -89,8 +89,7 @@ Best Practices is part of [Microsoft ASP.NET Core Performance](https://learn.mic
 
 * [Reduce memory allocations](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/performance/) wherever possible.
 
-* [Discover StringBuilder performance benefits](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)
-
+* [Discover StringBuilder](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder) performance benefits
 [This article](https://www.meziantou.net/stringbuilder-performance-pitfalls.htm) shows performance benefits using StringBuilder.
 
 * Build deployment packages in **Release** mode (and with additional optimization possibilities (AoT,...)).
