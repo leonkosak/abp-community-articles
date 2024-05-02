@@ -89,7 +89,7 @@ Best Practices is part of [Microsoft ASP.NET Core Performance](https://learn.mic
 
 * [Reduce memory allocations](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/performance/) wherever possible.
 
-* [Discover StringBuilder](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder) performance benefits
+* [Discover StringBuilder](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder) performance benefits.
 [This article](https://www.meziantou.net/stringbuilder-performance-pitfalls.htm) shows performance benefits using StringBuilder.
 
 * Build deployment packages in **Release** mode (and with additional optimization possibilities (AoT,...)).
