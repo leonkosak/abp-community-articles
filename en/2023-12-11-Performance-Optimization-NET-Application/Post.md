@@ -47,7 +47,7 @@ Further reading:
 * [JSON Mapping in Npgsql (EF Core)](https://www.npgsql.org/efcore/mapping/json.html)
 
 ### Paging Approach
-If **Cursor Pagination** can be used, then it is the preferred way how to effectively sort and paginate data from database. [This article]()https://khalidabuhakmeh.com/cursor-paging-with-entity-framework-core-and-aspnet-core shows execution times and it's based on EF Core implementation.
+If **Cursor Pagination** can be used, then it is the preferred way how to effectively sort and paginate data from database. [This article](https://khalidabuhakmeh.com/cursor-paging-with-entity-framework-core-and-aspnet-core) shows execution times and it's based on EF Core implementation.
 
 ### Database sharding
 The smaller the database, the less data is for querying and this also means lower execution times.
